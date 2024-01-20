@@ -2,7 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const studentRoute = require('./src/student/routes');
 const app = express();
-const port = 3200;
+const dotenv = require("dotenv");
+dotenv.config();
+const port = 3200 || process.env.PORT;
+console.log(process.env.PORT)
 
 // Enable CORS for all routes
 app.use(cors());
